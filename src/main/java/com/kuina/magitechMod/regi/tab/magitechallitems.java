@@ -1,5 +1,7 @@
 package com.kuina.magitechMod.regi.tab;
 
+import com.kuina.magitechMod.blocks.GlowingBlock;
+import com.kuina.magitechMod.blocks.ManaJemStoneBlock;
 import com.kuina.magitechMod.main.magitech;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -19,6 +21,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Supplier;
+
 
 import static net.minecraft.world.level.block.Blocks.AMETHYST_BLOCK;
 import static net.minecraft.world.level.block.Blocks.STONE;
@@ -45,10 +48,9 @@ public class magitechallitems {
                 public static final RegistryObject<Item> low_mana_ingot = ITEMS.register("low_mana_ingot", com.kuina.magitechMod.item.low_mana_ingot::new);
                 public static final RegistryObject<Item> middle_mana_ingot = ITEMS.register("middle_mana_ingot", () -> new Item(new Item.Properties()));
                 public static final RegistryObject<Item> high_mana_ingot = ITEMS.register("high_mana_ingot", () -> new Item(new Item.Properties()));
-                public static final RegistryObject<BlockItem> mana_stone = ITEMS.register("mana_stone", ()->new BlockItem(magitechBlocks.Blocks.mana_stone.get(), new Item.Properties()));
-                public static final RegistryObject<BlockItem> mana_jem_stone = ITEMS.register("mana_jem_stone", ()->new BlockItem(magitechBlocks.Blocks.mana_jem_stone.get(), new Item.Properties()));
-
-
+                public static final RegistryObject<BlockItem> mana_stone = ITEMS.register("mana_stone", () -> new BlockItem(magitechBlocks.Blocks.mana_stone.get(), new Item.Properties()));
+                public static final RegistryObject<BlockItem> mana_jem_stone = ITEMS.register("mana_jem_stone", () -> new BlockItem(magitechBlocks.Blocks.mana_jem_stone.get(), new Item.Properties()));
+                ;
             }
 
             public static class magitechBlocks {
@@ -59,12 +61,7 @@ public class magitechallitems {
                             .strength(2.0f, 1.0f)
                             .requiresCorrectToolForDrops()
                             .sound(SoundType.STONE)));
-                    public static final RegistryObject<Block> mana_jem_stone = BLOCKS.register("mana_jem_stone", () -> new Block(BlockBehaviour.Properties.copy(mana_stone.get())
-                            .strength(2.0f, 1.0f)
-                            .requiresCorrectToolForDrops()
-                            .sound(AMETHYST)));
-
-
+                    public static final RegistryObject<Block> mana_jem_stone = BLOCKS.register("mana_jem_stone", ManaJemStoneBlock::new);
 
                 }
 
