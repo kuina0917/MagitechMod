@@ -5,7 +5,7 @@ import com.kuina.magitechMod.regi.tab.magitechallitems;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import software.bernie.geckolib.GeckoLib;
+
 
 
 @SuppressWarnings("removal")
@@ -15,7 +15,6 @@ public class magitech {
     public static final String MOD_ID = "magitech";
 
     public magitech() {
-        GeckoLib.initialize();
 
 
             IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
